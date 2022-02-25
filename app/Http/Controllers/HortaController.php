@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Horta;
 use App\Http\Requests\StoreHortaRequest;
 use App\Http\Requests\UpdateHortaRequest;
+use App\Models\Escola;
 
 class HortaController extends Controller
 {
@@ -25,7 +26,10 @@ class HortaController extends Controller
      */
     public function create()
     {
-        //
+        $hortas     = Horta::all();
+        $escolas    = Escola::all();
+
+        return view('admin.hortas.create', compact('hortas', 'escolas'));
     }
 
     /**
@@ -36,7 +40,8 @@ class HortaController extends Controller
      */
     public function store(StoreHortaRequest $request)
     {
-        //
+        Horta::create($request->validated());
+        return redirect()->view('admin.hortas.index');
     }
 
     /**

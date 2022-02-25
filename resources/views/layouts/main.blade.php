@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
     {{--CSS Galeria Fotos--}}
-    <link rel="stylesheet" href="{{asset('css/fotos.css')}}">
+    {{-- <link rel="stylesheet" href="{{asset('css/fotos.css')}}"> --}}
 
 
     <title>@yield('title')</title>

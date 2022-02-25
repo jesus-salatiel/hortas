@@ -15,8 +15,21 @@ return new class extends Migration
     {
         Schema::create('escolas', function (Blueprint $table) {
             $table->id();
-            $table->string('nome_escola');
+            $table->string  ('escola');
+            $table->integer ('cie');
+            $table->string  ('regiao');
+            $table->string  ('bairro');
+            $table->string  ('endereco');
+            $table->string  ('telefone');
             $table->timestamps();
+
+           
+
+            $table->softDeletes();
+
+
+
+
         });
     }
 

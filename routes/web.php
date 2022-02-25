@@ -25,6 +25,9 @@ Route::get('/', function () {
 
 // Sessão administrativa
 
+// Route::redirect('/', 'admin.escolas');
+
+
 Route::prefix('admin')->name('admin.')->group(function(){
 
     Route::resource('escolas', EscolaController::class)->except(['show']);

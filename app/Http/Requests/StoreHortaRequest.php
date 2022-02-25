@@ -13,7 +13,7 @@ class StoreHortaRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,12 @@ class StoreHortaRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'nome_horta'    => ['string','required',],
+            'foto_horta'    => ['string','nullable',],
+
+            'escola'   => ['integer','required',],
+
+
         ];
     }
 }

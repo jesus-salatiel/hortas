@@ -21,14 +21,14 @@
         @endif
                 --}}
 
-        <form action="{{$action}}" method="POST">
+        <form action="{{$action}}" method="post">
 
             @csrf
             @isset($escola)
                 @method('PUT')
             @endisset
             <div class="imput-field">
-                <input type="text" name="nome" id="nome" value="{{old('nome', $escola->nome ?? '')}}"/>
+                <input type="text" name="nome" id="nome" value="{{old('nome', $escola->nome_escola ?? '')}}"/>
                 <label for="nome">Nome<label>
                 @error('nome')
                     <span class="red-text text-accent-3"><small>{{$message}}</small></span>
