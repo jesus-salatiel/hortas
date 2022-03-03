@@ -28,9 +28,6 @@
                         <a href="{{route('admin.hortas.index')}}">Hortas</a>
                     </li>
                     <li>
-                        <a href="{{route('admin.escolas.index')}}">Escolas</a>
-                    </li>
-                    <li>
                         <a href="{{ route('admin.fotos.index')}}">Fotos</a>
                     </li>
 
