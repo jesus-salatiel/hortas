@@ -16,9 +16,10 @@ return new class extends Migration
         Schema::create('fotos', function (Blueprint $table) {
             $table->id();
             $table->string('url', 255);
-            $table->text('descricao', 500);
+            $table->text('descricao', 500)->nullable();
             $table->foreignId('horta_id')->constrained('hortas')->onDelete('cascade');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

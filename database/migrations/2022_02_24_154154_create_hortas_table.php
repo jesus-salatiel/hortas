@@ -15,12 +15,13 @@ return new class extends Migration
     {
         Schema::create('hortas', function (Blueprint $table) {
             $table->id();
-            $table->string('nome_horta');
+            $table->string('nome_horta')->nullable();
             $table->string('foto_horta', 255)->nullable();
 
             $table->foreignId('escola_id')->nullable()->constrained()->onDelete('cascade');
 
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
