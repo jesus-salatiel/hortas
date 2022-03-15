@@ -15,7 +15,7 @@ class FotoController extends Controller
      */
     public function index()
     {
-        return view('admin.fotos.index');
+        return view('admin.hortas.fotos.index');
     }
 
     /**

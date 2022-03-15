@@ -30,7 +30,7 @@ Route::get('/', function () {
 
 Route::prefix('admin')->name('admin.')->group(function(){
 
-    Route::resource('escolas', EscolaController::class)->except(['show']);
+    // Route::resource('escolas', EscolaController::class)->except(['show']);
     Route::resource('hortas', HortaController::class);
     Route::resource('fotos', FotoController::class)->except(['show', 'edit', 'update']);
 

@@ -16,7 +16,8 @@ class HortaController extends Controller
      */
     public function index()
     {
-        return view('admin.hortas.index');
+        $hortas = Horta::all();
+        return view('admin.hortas.index', compact('hortas'));
     }
 
     /**
@@ -29,7 +30,10 @@ class HortaController extends Controller
         $hortas     = Horta::all();
         $escolas    = Escola::all();
 
-        return view('admin.hortas.create', compact('hortas', 'escolas'));
+        $action = route('admin.hortas.store');
+        return view('admin.hortas.form', compact('action', 'hortas', 'escolas'));
+
+        
     }
 
     /**
@@ -40,6 +44,19 @@ class HortaController extends Controller
      */
     public function store(StoreHortaRequest $request)
     {
+
+        //echo "Salvar";
+
+        DB::beginTransaction();
+
+        $horta = Horta::create($request->all());
+
+        DB::commit();
+
+        $request->session()->flash('sucesso', "Horta incluído com sucesso!!!");
+        return redirect()->route('admin.hortas.index');
+
+
         Horta::create($request->validated());
         return redirect()->view('admin.hortas.index');
     }
