@@ -1,12 +1,10 @@
 <?php
 
-use App\Http\Controllers\EscolaController;
-use App\Http\Controllers\FotoController;
-use App\Http\Controllers\HortaController;
-use App\Models\Escola;
-use App\Models\Foto;
-use App\Models\Horta;
+use App\Http\Controllers\Admin\EscolaController;
+use App\Http\Controllers\Admin\FotoController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\HortaController;
+use App\Models\Foto;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,18 +18,30 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+   return view('welcome');
+})->name('welcome');
+
+// Route::redirect('/', '/admin/escolas');
 
 // Sessão administrativa
 
-// Route::redirect('/', 'admin.escolas');
-
-
 Route::prefix('admin')->name('admin.')->group(function(){
 
-    // Route::resource('escolas', EscolaController::class)->except(['show']);
+    Route::resource('escolas', EscolaController::class)->except(['show']);
     Route::resource('hortas', HortaController::class);
-    Route::resource('fotos', FotoController::class)->except(['show', 'edit', 'update']);
+    Route::resource('hortas.fotos', FotoController::class)->except(['show', 'edit', 'update']);
 
 });
+
+// Site principal
+
+   Route::resource('/escolas', App\Http\Controllers\Site\EscolaController::class)->only('index');
+   Route::resource('escolas.hortas', App\Http\Controllers\Site\HortaController::class)->only(['index', 'show']);
+
+
+
+
+// Route::get(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+//     return view('dashboard');
+// })->name('dashboard');
+

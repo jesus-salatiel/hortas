@@ -8,12 +8,12 @@
 
     <div class="row">
         <span class="col s12">
-            <h5>Cidade</h5>
-            <p>{{$imovel->cidade->nome}}</p>
+            <h5>Escola</h5>
+            <p>{{$horta->escola->nome}}</p>
         </span>
     </div>
 
-   
+
 
 </section>
 

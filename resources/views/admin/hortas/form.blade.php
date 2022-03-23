@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('admin.layouts.main')
 
 @section('title', 'formulario')
 
@@ -6,75 +6,12 @@
 
     <section class="section">
 
-
-
-
-
-        {{--  <form action="{{$action}}" method="post">
-
-            @csrf
-            @isset($escola)
-                @method('PUT')
-            @endisset
-            <div class="imput-field">
-                <input type="text" name="nome" id="nome" value="{{old('nome', $escola->nome_escola ?? '')}}"/>
-                <label for="nome">Nome<label>
-                @error('nome')
-                    <span class="red-text text-accent-3"><small>{{$message}}</small></span>
-                @enderror
-            </div>
-
-            <div class="right-align">
-                <a class="btn-flat waves-effect" href="{{route('admin.escolas.index')}}">Cancelar</a>
-                <button class="btn waves-effet waves-light" type="submit">
-                    Salvar
-                </button>
-            </div>
-        </form>
- --}}
-
         <form action="{{$action}}" method="POST">
             @csrf
 
             @isset($horta)
                 @method('PUT')
-                @endisset
-
-                {{-- escola--}}
-                <div class="row">
-
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <select name="tipo_id" id="tipo_id">
-                                <option value="" disabled selected>Selecione um tipo de imovel</option>
-
-                                    @foreach ($escolas as $escola)
-                                        <option value="{{$escola->id}}">{{$escola->escola}}</option>
-                                    @endforeach
-                            </select>
-                            <label for="tipo_id">Escola</label>
-                        </div>
-                    </div>
-
-                    {{-- @dd($escolas); --}}
-
-
-
-                    <div class="input-field col s12">
-                        <select name="escola_id" id="escola_id">
-                            <option value="" disabled selected> Selecione uma escola </option>
-
-                                @foreach ($escolas as $escola)
-                                    <option value="{{$escola->id}}" {{old('escola_id') == $escola->id}}>
-                                        {{$escola->nome}}</option>
-                                @endforeach
-                        </select>
-                        <label for="escola_id">escola</label>
-                        @error('escola_id')
-                            <span class="red-text text-accent-3"><small>{{$message}}</small></span>
-                        @enderror
-                    </div>
-                </div>
+            @endisset
 
             {{--titulo--}}
             <div class="row">
@@ -84,15 +21,24 @@
                 </div>
             </div>
 
-            {{--Descrição--}}
+            {{-- Escola--}}
             <div class="row">
-                <div div class="input-field col s12">
-                     <input type="text" name="descricao" id="descricao" value="{{old('descricao', $horta->descricao?? '')}}"/>
-                     <label for="titulo">Descrição</label>
+                <div class="input-field col s12">
+                    <select name="cidade_id" id="cidade_id">
+                        <option value="" disabled selected> Selecione uma cidade </option>
+
+                            @foreach ($escolas as $escola)
+                                <option value="{{$escola->id}}" {{old('escola_id') == $escola->id}}>
+                                    {{$escola->nome}}</option>
+                            @endforeach
+                    </select>
+                    <label for="escola_id">Escola</label>
+                    @error('escola_id')
+                        <span class="red-text text-accent-3"><small>{{$message}}</small></span>
+                    @enderror
                 </div>
             </div>
 
-            {{-- @dd($imoveis) --}}
 
 
             <!-- {{-- Tipo--}}
@@ -196,9 +142,9 @@
                     <select name="proximidades[]" id="proximidades" multiple>
                         <option value="" disabled> Selecione os pontos</option>
 
-                        {{-- @foreach ($proximidades as $proximidade )
+                        @foreach ($proximidades as $proximidade )
                             <option value="{{$proximidade->id}}">{{$proximidade->nome}}</option>
-                        @endforeach --}}
+                        @endforeach
 
                     </select>
                 </div>

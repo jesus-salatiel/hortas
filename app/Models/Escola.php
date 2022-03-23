@@ -5,23 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+
 class Escola extends Model
 {
     use HasFactory;
-    protected $table = "escolas";
 
-    protected $fillable = [
-        'escola',
-        'cie',
-        'regiao',
-        'bairro',
-        'endereco',
-        'telefone',
-        'horta_id'
-    ];
+    protected $fillable = ['nome'];
 
-    public function horta(){
+    public function hortas(){
 
-        return $this->belongsTo(Horta::class);
+        return $this->hasMany(Horta::class);
+
     }
+
 }

@@ -1,6 +1,6 @@
-@extends('layouts.main')
+@extends('admin.layouts.main')
 
-@section('title','hortas')
+@section('title','Hortas')
 
 @section('content')
 
@@ -9,7 +9,7 @@
         <table class="highlight">
             <thead>
                 <tr>
-                    <th>escola</th>
+                    <th>Escola</th>
                     <th>Bairro</th>
                     <th>Título</th>
                     <th class="right-align">Opções</th>
