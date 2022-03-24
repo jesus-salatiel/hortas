@@ -11,42 +11,13 @@ class Horta extends Model
     protected $table = "hortas";
 
     protected $fillable = [
-        'titulo',
-        'terreno',
-        'salas',
-        'banheiros',
-        'dormitorios',
-        'garagens',
+        'nome_horta',
+        'foto',
         'descricao',
-        'preco',
-        'cidade_id',
-        'tipo_id',
-        'finalidade_id'
     ];
-
-    public function endereco(){
-
-        return $this->hasOne(Endereco::class);
-    }
-
     public function escola(){
 
         return $this->belongsTo(Escola::class);
-
-    }
-    public function finalidade(){
-
-        return $this->belongsTo(Finalidade::class);
-
-    }
-    public function tipo(){
-
-        return $this->belongsTo(Tipo::class);
-
-    }
-    public function proximidades(){
-
-        return $this->belongsToMany(Proximidade::class)->withTimestamps();
 
     }
 

@@ -4,11 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Escola;
-use App\Models\Finalidade;
 use App\Models\Horta;
-use App\Models\Proximidade;
-use App\Models\Tipo;
-use App\Models\Endereco;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -21,7 +17,7 @@ class HortaController extends Controller
      */
     public function index()
     {
-        $hortas = Horta::with(['horta', 'endereco'])->get();
+        $hortas = Horta::with(['horta'])->get();
         return view('admin.hortas.index', compact('hortas'));
     }
 
@@ -33,12 +29,10 @@ class HortaController extends Controller
     public function create()
     {
         $escolas        = Escola::all();
-        $tipos          = Tipo::all();
-        $finalidades    = Finalidade::all();
-        $proximidades   = Proximidade::all();
+
 
         $action = route('admin.hortas.store');
-        return view('admin.hortas.form', compact('action', 'escolas', 'tipos', 'finalidades', 'proximidades'));
+        return view('admin.hortas.form', compact('action', 'escolas'));
     }
 
     /**
@@ -54,11 +48,10 @@ class HortaController extends Controller
         DB::beginTransaction();
 
         $horta = Horta::create($request->all());
-        $horta->endereco()->create($request->all());
 
-        if($request->has('proximidades')){
+        if($request->has('escola')){
 
-            $imovel->proximidades()->sync($request->proximidades);
+            $horta->escola()->sync($request->escola);
 
         }
 
@@ -77,7 +70,7 @@ class HortaController extends Controller
     public function show($id)
     {
         //
-        $horta = Horta::with(['escola','endereco','finalidade','tipo','proximidades'])->find($id);
+        $horta = Horta::with(['escola'])->find($id);
 
         return view('admin.hortas.show', compact('horta'));
     }
@@ -90,15 +83,13 @@ class HortaController extends Controller
      */
     public function edit($id)
     {
-        $horta         = Horta::with(['escola','endereco','finalidade','tipo','proximidades'])->find($id);
+        $horta         = Horta::with(['escola'])->find($id);
 
         $escolas        = Escola::all();
-        $tipos          = Tipo::all();
-        $finalidades    = Finalidade::all();
-        $proximidades   = Proximidade::all();
+
 
         $action = route('admin.hortas.update', $horta->id);
-        return view('admin.hortas.form', compact('horta', 'action', 'escolas', 'tipos', 'finalidades', 'proximidades'));
+        return view('admin.hortas.form', compact('horta', 'action', 'escolas'));
     }
 
     /**
@@ -115,11 +106,6 @@ class HortaController extends Controller
         DB::beginTransaction();
 
         $horta->update($request->all());
-        $horta->endereco->update($request->all());
-
-        if($request->has('proximidades')){
-            $horta->proximidades()->sync($request->proximidades);
-        }
 
         Db::Commit();
 
@@ -143,7 +129,7 @@ class HortaController extends Controller
         DB::beginTransaction();
 
         //Remover endereço
-        $horta->endereco->delete();
+
 
         //Remover o Horta
         $horta->delete();

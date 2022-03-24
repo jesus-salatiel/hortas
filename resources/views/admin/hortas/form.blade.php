@@ -142,9 +142,9 @@
                     <select name="proximidades[]" id="proximidades" multiple>
                         <option value="" disabled> Selecione os pontos</option>
 
-                        @foreach ($proximidades as $proximidade )
+                        {{-- @foreach ($proximidades as $proximidade )
                             <option value="{{$proximidade->id}}">{{$proximidade->nome}}</option>
-                        @endforeach
+                        @endforeach --}}
 
                     </select>
                 </div>

@@ -21,6 +21,11 @@
         @endif
                 --}}
 
+
+
+
+
+
         <form action="{{$action}}" method="POST">
 
             @csrf
@@ -33,6 +38,20 @@
                 @error('nome')
                     <span class="red-text text-accent-3"><small>{{$message}}</small></span>
                 @enderror
+            </div>
+
+            <div class="row">
+                <div class="input-field col s12">
+                    <select name="nome" id="nome">
+                        <option value="{{ old('nome', $escola->nome ?? '')}}"> Selecione a Escola</option>
+
+                        @foreach ($escolas as $escola )
+                            <option value="{{$escola->id}}">{{$escola->nome}}</option>
+                        @endforeach
+
+                    </select>
+                </div>
+
             </div>
 
             <div class="right-align">

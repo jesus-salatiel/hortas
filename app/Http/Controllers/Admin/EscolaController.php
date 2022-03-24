@@ -29,8 +29,9 @@ class EscolaController extends Controller
      */
     public function create()
     {
+        $escolas = Escola::all();
         $action = route('admin.escolas.store');
-        return view('admin.escolas.form', compact('action'));
+        return view('admin.escolas.form', compact('action', 'escolas'));
     }
 
     /**

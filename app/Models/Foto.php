@@ -9,8 +9,8 @@ class Foto extends Model
 {
     use HasFactory;
 
-    public function imovel()
+    public function hortas()
     {
-        return $this->belongsTo(Imovel::class);
+        return $this->belongsTo(Horta::class);
     }
 }

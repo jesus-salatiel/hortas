@@ -19,6 +19,8 @@ class CreateFotosTable extends Migration
             $table->foreignId('horta_id')->constrained('hortas')->onDelete('cascade');
 
             $table->timestamps();
+            $table->softDeletes();
+
         });
     }
 

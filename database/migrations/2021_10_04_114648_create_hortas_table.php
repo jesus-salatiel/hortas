@@ -15,21 +15,14 @@ class CreateHortasTable extends Migration
     {
         Schema::create('hortas', function (Blueprint $table) {
             $table->id();
-            $table->string('titulo')->nullable();
-            $table->integer('terreno')->nullable();
-            $table->integer('salas')->nullable();
-            $table->integer('banheiros')->nullable();
-            $table->integer('dormitorios')->nullable();
-            $table->integer('garagens')->nullable();
+            $table->string('nome_horta')->nullable();
+            $table->string('foto')->nullable();
             $table->text('descricao')->nullable();
-            $table->decimal('preco', 12,2)->nullable();
 
             $table->foreignId('escola_id')->nullable()->constrained()->onDelete('cascade');
-            $table->foreignId('tipo_id')->nullable()->constrained()->onDelete('cascade');
-            $table->foreignId('finalidade_id')->nullable()->constrained()->onDelete('cascade');
-
 
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
