@@ -10,7 +10,7 @@
             <thead>
                 <tr>
                     <th>Escola</th>
-                    <th>Bairro</th>
+
                     <th>Título</th>
                     <th class="right-align">Opções</th>
                 </tr>
@@ -20,7 +20,7 @@
                 @forelse ($hortas as $horta)
                     <tr>
                         <td>{{$horta->escola->nome}}</td>
-                        <td>{{$horta->endereco->bairro}}</td>
+                       
                         <td>{{$horta->titulo}}</td>
                         <td class="right-align">
                             {{-- Fotos --}}

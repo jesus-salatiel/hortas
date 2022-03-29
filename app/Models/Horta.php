@@ -2,13 +2,15 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Foto;
+use App\Models\Escola;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Horta extends Model
 {
     use HasFactory;
-    protected $table = "hortas";
+    // protected $table = "hortas";
 
     protected $fillable = [
         'nome_horta',

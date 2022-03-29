@@ -2,14 +2,15 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Horta;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Foto extends Model
 {
     use HasFactory;
 
-    public function hortas()
+    public function horta()
     {
         return $this->belongsTo(Horta::class);
     }

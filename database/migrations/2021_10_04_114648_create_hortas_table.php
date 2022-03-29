@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Escola;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -19,7 +20,7 @@ class CreateHortasTable extends Migration
             $table->string('foto')->nullable();
             $table->text('descricao')->nullable();
 
-            $table->foreignId('escola_id')->nullable()->constrained()->onDelete('cascade');
+            $table->foreignId('escola_id')->constrained('escolas')->onDelete('cascade');
 
             $table->timestamps();
             $table->softDeletes();
