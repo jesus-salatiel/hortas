@@ -61,7 +61,7 @@ return [
     |
     */
 
-    'home' => '/admin/escolas',
+    'home' => '/admin/hortas',
     // 'home' => RouteServiceProvider::HOME,
 
     /*

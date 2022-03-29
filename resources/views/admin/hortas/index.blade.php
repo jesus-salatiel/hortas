@@ -20,8 +20,8 @@
                 @forelse ($hortas as $horta)
                     <tr>
                         <td>{{$horta->escola->nome}}</td>
-                       
-                        <td>{{$horta->titulo}}</td>
+
+                        <td>{{$horta->nome_horta}}</td>
                         <td class="right-align">
                             {{-- Fotos --}}
                             <a href="{{route('admin.hortas.fotos.index', $horta->id)}}">

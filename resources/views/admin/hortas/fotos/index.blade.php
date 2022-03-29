@@ -3,7 +3,7 @@
 @section('title', 'fotos')
 
 @section('content')
-    <h4>{{$imovel->titulo}}</h4>
+    <h4>{{$horta->nome_horta}}</h4>
 
     <section class="section">
 
@@ -13,7 +13,7 @@
                 <div class="flex-item">
                     <span class="btn-fechar">
 
-                        <form action="{{ route('admin.imoveis.fotos.destroy', [$imovel->id, $foto->id])}}" method="POST" style="display: inline;">
+                        <form action="{{ route('admin.hortas.fotos.destroy', [$horta->id, $foto->id])}}" method="POST" style="display: inline;">
                             @csrf
                             @method('DELETE')
                             <button style="border:0;background:transparent;" type="submit" title="remover">
@@ -35,7 +35,7 @@
 
 
         <div class="fixed-action-btn">
-            <a href="{{route('admin.imoveis.fotos.create', $imovel->id)}}"
+            <a href="{{route('admin.hortas.fotos.create', $horta->id)}}"
                 class="btn-floating btn-large waves-light">
                 <i class="large material-icons">add</i>
             </a>

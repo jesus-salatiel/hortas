@@ -10,7 +10,7 @@
 
             <div class="file-field input-field">
                 <div class="btn">
-                    <span>Selecionar</span>
+                    <span>Selecionar Fotos</span>
                     <input type="file" name="foto"/>
                 </div>
                 <div class="file-path-wrapper">

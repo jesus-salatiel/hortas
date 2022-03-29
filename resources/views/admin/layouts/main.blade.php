@@ -27,9 +27,9 @@
                     <li>
                         <a href="{{route('admin.hortas.index')}}">Hortas</a>
                     </li>
-                    <li>
+                    {{-- <li>
                         <a href="{{route('admin.escolas.index')}}">Escolas</a>
-                    </li>
+                    </li> --}}
 
                 </ul>
 
