@@ -11,7 +11,10 @@ class Escola extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['nome'];
+    // protected $fillable = [
+        // 'nome',
+
+    // ];
 
     public function hortas(){
 

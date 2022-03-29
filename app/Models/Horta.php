@@ -10,12 +10,15 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Horta extends Model
 {
     use HasFactory;
-    // protected $table = "hortas";
+
+    protected $table = "hortas";
 
     protected $fillable = [
         'nome_horta',
         'foto',
         'descricao',
+        'escola_id',
+
     ];
     public function escola(){
 

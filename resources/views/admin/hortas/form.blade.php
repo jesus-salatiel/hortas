@@ -16,16 +16,16 @@
             {{--titulo--}}
             <div class="row">
                 <div div class="input-field col s12">
-                     <input type="text" name="titulo" id="titulo" value="{{old('titulo', $horta->titulo?? '')}}"/>
-                     <label for="titulo">Título</label>
+                     <input type="text" name="nome_horta" id="nome_horta" value="{{old('nome_horta', $horta->nome_horta?? '')}}"/>
+                     <label for="titulo">Título Horta</label>
                 </div>
             </div>
 
             {{-- Escola--}}
             <div class="row">
                 <div class="input-field col s12">
-                    <select name="cidade_id" id="cidade_id">
-                        <option value="" disabled selected> Selecione uma cidade </option>
+                    <select name="escola_id" id="escola_id">
+                        <option value="" disabled selected> Selecione uma Escola </option>
 
                             @foreach ($escolas as $escola)
                                 <option value="{{$escola->id}}" {{old('escola_id') == $escola->id}}>
@@ -37,6 +37,27 @@
                         <span class="red-text text-accent-3"><small>{{$message}}</small></span>
                     @enderror
                 </div>
+            </div>
+
+            {{-- Foto de Capa --}}
+            <div class="row">
+
+                <div class="input-field col s12">
+                    <input type="file" name="foto" id="foto">
+                    {{-- <label for="foto">Foto</label> --}}
+                </div>
+
+            </div>
+
+
+            {{-- DESCRIÇÃO --}}
+            <div class="row">
+
+                <div class="input-field col s12">
+                    <textarea name="descricao" id="descricao" class="materialize-textarea"></textarea>
+                    <label for="descricao">Descrição</label>
+                </div>
+
             </div>
 
 

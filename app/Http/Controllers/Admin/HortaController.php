@@ -17,7 +17,7 @@ class HortaController extends Controller
      */
     public function index()
     {
-        $hortas = Horta::with(['horta'])->get();
+        $hortas = Horta::all();
         return view('admin.hortas.index', compact('hortas'));
     }
 
@@ -33,6 +33,7 @@ class HortaController extends Controller
 
         $action = route('admin.hortas.store');
         return view('admin.hortas.form', compact('action', 'escolas'));
+
     }
 
     /**
@@ -43,19 +44,30 @@ class HortaController extends Controller
      */
     public function store(Request $request)
     {
-        //echo "Salvar";
+        // //echo "Salvar";
 
-        DB::beginTransaction();
+        // DB::beginTransaction();
+
+        // $horta = Horta::create($request->all());
+        // // $horta->escola()->create($request->all());
+
+        // if($request->has('escola')){
+
+        //     $horta->escola()->sync($request->escola);
+
+        // }
+
+        // DB::commit();
+
+
+
+
+        $horta = new Horta;
+        $horta = $request->all();
+
+        // dd($request);
 
         $horta = Horta::create($request->all());
-
-        if($request->has('escola')){
-
-            $horta->escola()->sync($request->escola);
-
-        }
-
-        DB::commit();
 
         $request->session()->flash('sucesso', "Horta incluída com sucesso!!!");
         return redirect()->route('admin.hortas.index');

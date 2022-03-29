@@ -10,6 +10,14 @@ class Foto extends Model
 {
     use HasFactory;
 
+    protected $table = "fotos";
+
+    protected $fillable = [
+        'url',
+        'horta_id',
+
+    ];
+
     public function horta()
     {
         return $this->belongsTo(Horta::class);

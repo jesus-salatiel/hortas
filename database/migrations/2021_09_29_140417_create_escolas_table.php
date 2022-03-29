@@ -16,6 +16,7 @@ class CreateEscolasTable extends Migration
         Schema::create('escolas', function (Blueprint $table) {
             $table->id();
             $table->string('nome');
+           
             $table->timestamps();
             $table->softDeletes();
         });
