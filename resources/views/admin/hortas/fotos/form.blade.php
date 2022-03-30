@@ -9,9 +9,9 @@
             @csrf
 
             <div class="file-field input-field">
-                <div class="btn">
+                <div class="btn blue ">
                     <span>Selecionar Fotos</span>
-                    <input type="file" name="foto"/>
+                    <input type="file" name="foto" multiple>
                 </div>
                 <div class="file-path-wrapper">
                     <input type="text" class="file-path validate"/>
@@ -22,8 +22,8 @@
                 @enderror
 
                 <div class="right-align">
-                    <a href="{{url()->previous()}}" class="btn-flat waves-effect">Cancelar</a>
-                    <button class="btn waves-effect waves-light" type="submit">Salvar</button>
+                    <a href="{{url()->previous()}}" class="btn waves-effect red">Cancelar</a>
+                    <button class="btn-large waves-effect waves-light blue" type="submit">Salvar</button>
                 </div>
 
             </div>

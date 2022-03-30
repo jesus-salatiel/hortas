@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests\FotoRequest;
+use Config\App;
 use App\Models\Foto;
 use App\Models\Horta;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
+use App\Http\Requests\FotoRequest;
+use App\Http\Controllers\Controller;
 use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\Storage;
+
 
 class FotoController extends Controller
 {
@@ -46,7 +48,8 @@ class FotoController extends Controller
      */
     public function store(FotoRequest $request, $idHorta)
     {
-       // dd($request->file('foto'));
+    //    dd($request->file('foto'));
+    //    dd($idHorta);
 
 
 
@@ -57,12 +60,13 @@ class FotoController extends Controller
             if($request->foto->isValid()){
 
 
-                // Pegando o caminho e o nome do arquivo para salvar no disco
-                $fotoUrl = $request->foto->hashName("images/$idHorta");
+                // // Pegando o caminho e o nome do arquivo para salvar no disco
+                $fotoUrl = $request->foto->hashName("hortas/$idHorta");
+
+                // dd($fotoUrl);
 
                 // redimensionando imagem
-                $image = Image::make($request->foto)->fit(1600,900);
-                // $imagem = Image::make($request->foto)->fit(1600,900);
+                $imagem = Image::make($request->foto)->fit(env('FOTO_LARGURA'), env('FOTO_ALTURA'));
 
                 // Salvar no disco
                 Storage::disk('public')->put($fotoUrl, $imagem->encode());

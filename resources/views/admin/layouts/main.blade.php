@@ -13,15 +13,16 @@
     {{--CSS Galeria Fotos--}}
     <link rel="stylesheet" href="{{asset('css/fotos.css')}}">
 
+    @yield('style_card')
 
     <title>@yield('title')</title>
 </head>
 <body>
 
     {{--Menu Topo--}}
-    <nav>
+    <nav style="background-color: #2196F3">
         <div class="container">
-            <div class="nav-wrapper">
+            <div class="nav-wrapper ">
                 <a href="#" class="brand-logo"> HORTAS</a>
                 <ul class="right">
                     <li>
