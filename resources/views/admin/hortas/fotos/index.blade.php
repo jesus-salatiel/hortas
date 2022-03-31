@@ -17,7 +17,7 @@
 @section('title', 'fotos')
 
 @section('content')
-<h4>{{ $horta->nome_horta }}</h4>
+<h4><strong>{{ $horta->nome_horta }}</strong></h4>
 
 <section class="section">
 
@@ -33,7 +33,7 @@
                 <div class="card-content">
                     <span class="card-title activator grey-text text-darken-4"><i
                             class="material-icons right">more_vert</i></span>
-                    <span><strong> INFORMAÇÕES</strong></span>
+                    <span style="font-size:110%"><strong> INFORMAÇÕES</strong></span>
                 </div>
                 <span>
                     <form

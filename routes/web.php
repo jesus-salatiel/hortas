@@ -4,7 +4,9 @@ use App\Http\Controllers\Admin\EscolaController;
 use App\Http\Controllers\Admin\FotoController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\HortaController;
+use App\Models\Escola;
 use App\Models\Foto;
+use App\Models\Horta;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +20,9 @@ use App\Models\Foto;
 */
 
 Route::get('/', function () {
-   return view('welcome');
+    $fotos  = Foto::all();
+    $hortas = Horta::all();
+    return view('welcome', compact('fotos', 'hortas'));
 })->name('welcome');
 
 // Route::redirect('/', '/admin/escolas');

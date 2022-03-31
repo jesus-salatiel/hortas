@@ -29,6 +29,7 @@
 
                             @foreach ($escolas as $escola)
                                 <option value="{{$escola->id}}" {{old('escola_id') == $escola->id}}>
+
                                     {{$escola->nome}}</option>
                             @endforeach
                     </select>

@@ -25,15 +25,33 @@
             <div class="nav-wrapper ">
                 <a href="#" class="brand-logo"> HORTAS</a>
                 <ul class="right">
-                    <li>
-                        <a href="{{route('admin.hortas.index')}}">Hortas</a>
-                    </li>
-                    <li>
+
+                    {{-- <li>
                         <a href="{{route('welcome')}}">Página Inicial</a>
-                    </li>
+                    </li> --}}
                     {{-- <li>
                         <a href="{{route('admin.escolas.index')}}">Escolas</a>
                     </li> --}}
+                    <li class="relative flex items-top justify-center  sm:items-center py-4 sm:pt-0">
+                        @if (Route::has('login'))
+                            <li class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
+                                @auth
+                                    <a href="{{ route('admin.hortas.index') }}" class="text-sm  underline">Administrativo</a>
+                                @else
+                                    <a href="{{ route('login') }}" class="text-sm  underline">Log in</a>
+
+                                    @if (Route::has('register'))
+                                        <a href="{{ route('register') }}" class="ml-4 text-sm  underline">Register</a>
+                                    @endif
+                                @endauth
+                            </li>
+                        @endif
+
+
+                    </li>
+
+
+
 
                 </ul>
 
@@ -42,6 +60,7 @@
         </div>
 
     </nav>
+
 
     {{-- Conteudo Principal --}}
     <div class="container">
