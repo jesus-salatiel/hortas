@@ -11,7 +11,7 @@
             <div class="file-field input-field">
                 <div class="btn blue ">
                     <span>Selecionar Fotos</span>
-                    <input type="file" name="foto" multiple>
+                    <input type="file" name="foto">
                 </div>
                 <div class="file-path-wrapper">
                     <input type="text" class="file-path validate"/>
