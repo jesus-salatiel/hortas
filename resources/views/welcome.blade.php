@@ -26,18 +26,33 @@
 
 
     <div class="card caixa-horta" style="width: 100%; height: 100%;">
+
         @foreach ($hortas as $horta)
 
+            {{-- @php
+                if($horta->fotos->isEmpty()){
+                    $tmp = '';
+
+                } else {
+                    $tmp = $horta->fotos[0]->url;
+
+                } --}}
+            @endphp
+            {{-- @foreach ( $fotos as $foto ) --}}
+
+            {{-- @dd($horta->escolas->nome) --}}
 
             <div class="card" style="width: 300px; height: 370px; min-width:150px">
 
                 <div class="card-image waves-effect waves-block waves-light ">
-                    <img src="{{ asset("$horta->foto") }}">
+                    <img src="storage/{{ $horta->fotos[0]->url }}">
                 </div>
                 <div class="card-content">
                     <span class="card-title activator grey-text text-darken-4"><i
                             class="material-icons right">more_vert</i></span>
-                    <span style="font-size:110%"><strong> INFORMAÇÕES</strong></span>
+                    <span style="font-size:110%"><strong> INFORMAÇÕES</strong></span> <br><br>
+                    <div style="font-size:110%; font-weight: bold;"> Horta da Escola: </div>
+                    <div style="font-size:130%">{{ $horta->escola['nome'] }}</div>
                 </div>
 
                 <div class="card-reveal">
@@ -48,7 +63,7 @@
                 </div>
             </div>
 
-
+            {{-- @endforeach --}}
         @endforeach
 
 

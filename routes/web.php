@@ -20,9 +20,13 @@ use App\Models\Horta;
 */
 
 Route::get('/', function () {
+
     $fotos  = Foto::all();
-    $hortas = Horta::all();
-    return view('welcome', compact('fotos', 'hortas'));
+    $hortas = Horta::with(['fotos','escola'])->get();
+    $escolas = Escola::all();
+
+
+    return view('welcome', compact('fotos', 'hortas', 'escolas'));
 })->name('welcome');
 
 // Route::redirect('/', '/admin/escolas');
@@ -48,4 +52,5 @@ Route::prefix('admin')->name('admin.')->group(function(){
 // Route::get(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //     return view('dashboard');
 // })->name('dashboard');
+
 
