@@ -9,7 +9,7 @@
     <div class="row">
         <span class="col s12">
             <h5>Cidade</h5>
-            <p>{{$horta->escola->nome}}</p>
+            {{-- <p>{{$horta->escola->nome}}</p> --}}
         </span>
     </div>
 
@@ -19,7 +19,7 @@
 
 <!-- imagens -->
 
-<section class="section">
+{{-- <section class="section">
     <h4 class="center">
         <span class="teal-text">IMAGENS</span>DA HORTA
     </h4>
@@ -34,7 +34,7 @@
 
     </div>
 
-</section>
+</section> --}}
 
 
 

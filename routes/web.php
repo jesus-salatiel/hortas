@@ -4,9 +4,12 @@ use App\Http\Controllers\Admin\EscolaController;
 use App\Http\Controllers\Admin\FotoController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\HortaController;
+use App\Http\Controllers\GaleriaController;
 use App\Models\Escola;
 use App\Models\Foto;
+use App\Models\Galeria;
 use App\Models\Horta;
+use Illuminate\Routing\Route as RoutingRoute;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,9 +46,11 @@ Route::prefix('admin')->name('admin.')->group(function(){
 
 // Site principal
 
-   Route::resource('/escolas', App\Http\Controllers\Site\EscolaController::class)->only('index');
-   Route::resource('escolas.hortas', App\Http\Controllers\Site\HortaController::class)->only(['index', 'show']);
+//    Route::resource('/site.escolas', App\Http\Controllers\Site\EscolaController::class)->only('index');
+//    Route::resource('site.escolas.hortas', App\Http\Controllers\Site\HortaController::class)->only(['index', 'show']);
 
+
+    Route::resource('/galeria', GaleriaController::class);
 
 
 

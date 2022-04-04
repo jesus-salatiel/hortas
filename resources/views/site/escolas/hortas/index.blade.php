@@ -1,4 +1,4 @@
-@extends('site.layouts.main')
+{{-- @extends('site.layouts.main')
 
 @section('title', 'Horta')
 
@@ -33,4 +33,6 @@
 
 </section>
 
-@endsection
+@endsection --}}
+
+<h1>TESTE</h1>

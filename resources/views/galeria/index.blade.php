@@ -54,7 +54,7 @@
                     <div style="font-size:110%; font-weight: bold;"> Horta da Escola: </div>
                     <div style="font-size:130%">{{ $horta->escola['nome'] }}</div>
                     <div>
-                        <a href="{{ route('galeria.show', [$horta->id, $escola->id]) }}">Galeria de Fotos</a>
+                        <a href="{{ route('galeria.show', [$horta->id]) }}">Galeria de Fotos</a>
                     </div>
                 </div>
 
