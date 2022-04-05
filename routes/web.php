@@ -11,30 +11,19 @@ use App\Models\Galeria;
 use App\Models\Horta;
 use Illuminate\Routing\Route as RoutingRoute;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-Route::get('/', function () {
-
-    $fotos  = Foto::all();
-    $hortas = Horta::with(['fotos','escola'])->get();
-    $escolas = Escola::all();
 
 
-    return view('welcome', compact('fotos', 'hortas', 'escolas'));
-})->name('welcome');
+// Page Inicial - PUBLIC
 
-// Route::redirect('/', '/admin/escolas');
+Route::redirect('/', '/galeria')->name('welcome');
 
-// Sessão administrativa
+Route::resource('/galeria', GaleriaController::class);
+
+Route::get('/info', function(){
+return view('info');
+})->name('info');
+
+// SESSÃO ADMINISTRATIVA
 
 Route::prefix('admin')->name('admin.')->group(function(){
 
@@ -44,18 +33,5 @@ Route::prefix('admin')->name('admin.')->group(function(){
 
 });
 
-// Site principal
-
-//    Route::resource('/site.escolas', App\Http\Controllers\Site\EscolaController::class)->only('index');
-//    Route::resource('site.escolas.hortas', App\Http\Controllers\Site\HortaController::class)->only(['index', 'show']);
-
-
-    Route::resource('/galeria', GaleriaController::class);
-
-
-
-// Route::get(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-//     return view('dashboard');
-// })->name('dashboard');
 
 

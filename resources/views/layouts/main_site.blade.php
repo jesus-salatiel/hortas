@@ -12,6 +12,7 @@
 
     {{--CSS Galeria Fotos--}}
     <link rel="stylesheet" href="{{asset('css/fotos.css')}}">
+    <link rel="stylesheet" href="{{asset('css/sidebar.css')}}">
 
     @yield('style_card')
 
@@ -20,38 +21,51 @@
 <body>
 
     {{--Menu Topo--}}
-    <nav style="background-color: #2196F3">
+    <nav style="background-color: #2196F3;">
         <div class="container">
             <div class="nav-wrapper ">
-                <a href="#" class="brand-logo"> HORTAS</a>
-                <ul class="right">
+                <!-- Ícone para abrir no Mobile -->
+                <a href="#" data-target="mobile-navbar" class="sidenav-trigger">
+                    <i class="material-icons">menu</i>
+                </a>
+                <ul class="left">
 
-                    {{-- <li>
-                        <a href="{{route('welcome')}}">Página Inicial</a>
-                    </li> --}}
-                    {{-- <li>
-                        <a href="{{route('admin.escolas.index')}}">Escolas</a>
-                    </li> --}}
+                    <li>
+                        <a class="dropdown-trigger" data-target="dropdown-menu" href="#">
+                            Menu <i class="material-icons right">arrow_drop_down</i>
+                        </a>
+                    </li>
+                </ul>
+                 <!-- Dropdown -->
+                 <ul id="dropdown-menu" class="dropdown-content">
+                    <li><a href="#">Telefone</a></li>
+                    <li><a href="#">E-mail</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Redes sociais</a></li>
+                </ul>
+
+
+                <ul class="right">
+                    <li>
+                        <a href="{{route('info')}}">Informações</a>
+                    </li>
                     <li class="relative flex items-top justify-center  sm:items-center py-4 sm:pt-0">
                         @if (Route::has('login'))
                             <li class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                                 @auth
                                     <a href="{{ route('admin.hortas.index') }}" class="text-sm  underline">Administrativo</a>
                                 @else
-                                    <a href="{{ route('login') }}" class="text-sm  underline">Log in</a>
+                                    <a href="{{ route('login') }}" class="text-sm  underline">Entrar</a>
 
                                     {{-- @if (Route::has('register'))
                                         <a href="{{ route('register') }}" class="ml-4 text-sm  underline">Register</a>
                                     @endif --}}
+
                                 @endauth
                             </li>
                         @endif
 
-
                     </li>
-
-
-
 
                 </ul>
 
@@ -64,7 +78,9 @@
 
     {{-- Conteudo Principal --}}
     <div class="container">
+
         @yield('content')
+
     </div>
 
 
@@ -87,6 +103,16 @@
         var boxes = document.querySelectorAll('.materialboxed');
         M.Materialbox.init(boxes);
 
+        });
+
+        // Navbar
+        const elemsDropdown = document.querySelectorAll(".dropdown-trigger");
+        const instancesDropdown = M.Dropdown.init(elemsDropdown, {
+            coverTrigger: false
+        });
+        const elemsSidenav = document.querySelectorAll(".sidenav");
+        const instancesSidenav = M.Sidenav.init(elemsSidenav, {
+            edge: "left"
         });
 
 

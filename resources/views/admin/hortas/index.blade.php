@@ -30,11 +30,13 @@
                                 </span>
                             </a>
                             {{-- Ver --}}
-                            <a href="{{route('admin.hortas.show', $horta->id)}}">
+
+                            {{-- <a href="{{route('admin.hortas.show', $horta->id)}}">
                                 <span>
                                     <i class="material-icons indigo-text text-darken-2">remove_red_eye</i>
                                 </span>
-                            </a>
+                            </a> --}}
+
                             {{-- Editar --}}
                             <a href="{{route('admin.hortas.edit', $horta->id)}}">
                                 <span>

@@ -23,7 +23,7 @@
     <nav style="background-color: #2196F3">
         <div class="container">
             <div class="nav-wrapper ">
-                <a href="#" class="brand-logo"> HORTAS</a>
+                <a href="#" class="brand-logo"> HORTA EDUCATIVA </a>
                 <ul class="right">
                     <li>
                         <a href="{{route('admin.hortas.index')}}">Hortas</a>
