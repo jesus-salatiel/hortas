@@ -31,6 +31,28 @@
                     <li>
                         <a href="{{route('welcome')}}">Página Inicial</a>
                     </li>
+                    <li>
+                    @if (auth()->id())
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+
+                                <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                            this.closest('form').submit(); " role="button">
+
+                                    {{ __('Sair') }}
+                                </a>
+
+                        </form>
+                    @else
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('login') }}" role="button">
+                                <i class="fas fa-sign-in-alt"></i>
+                                Login
+                            </a>
+                        </li>
+                    @endif
+                    </li>
+
                     {{-- <li>
                         <a href="{{route('admin.escolas.index')}}">Escolas</a>
                     </li> --}}

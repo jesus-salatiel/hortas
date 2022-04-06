@@ -10,8 +10,7 @@ use App\Models\Foto;
 use App\Models\Galeria;
 use App\Models\Horta;
 use Illuminate\Routing\Route as RoutingRoute;
-
-
+use Illuminate\Support\Facades\Auth;
 
 // Page Inicial - PUBLIC
 
@@ -22,6 +21,9 @@ Route::resource('/galeria', GaleriaController::class);
 Route::get('/info', function(){
 return view('info');
 })->name('info');
+
+
+
 
 // SESSÃO ADMINISTRATIVA
 

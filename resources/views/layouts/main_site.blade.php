@@ -51,9 +51,30 @@
                     </li>
                     <li class="relative flex items-top justify-center  sm:items-center py-4 sm:pt-0">
                         @if (Route::has('login'))
-                            <li class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
+                            {{-- < class="hidden fixed top-0 right-0 px-6 py-4 sm:block"> --}}
                                 @auth
                                     <a href="{{ route('admin.hortas.index') }}" class="text-sm  underline">Administrativo</a>
+                                    <li>
+                                    @if (auth()->id())
+                                    <form method="POST" action="{{ route('logout') }}">
+                                        @csrf
+
+                                            <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                        this.closest('form').submit(); " role="button">
+                                               
+                                                {{ __('Sair') }}
+                                            </a>
+
+                                    </form>
+                                @else
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('login') }}" role="button">
+                                            <i class="fas fa-sign-in-alt"></i>
+                                            Login
+                                        </a>
+                                    </li>
+                                @endif
+                                    </li>
                                 @else
                                     <a href="{{ route('login') }}" class="text-sm  underline">Entrar</a>
 

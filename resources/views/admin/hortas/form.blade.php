@@ -28,9 +28,7 @@
                         <option value="" disabled selected> Selecione uma Escola </option>
 
                             @foreach ($escolas as $escola)
-                                <option value="{{$escola->id}}" {{old('escola_id') == $escola->id}}>
-
-                                    {{$escola->nome}}</option>
+                                <option value="{{$escola->id}}" {{old('escola_id',$horta->escola->id ?? '' ) == $escola->id ? 'selected' : ''}}>{{$escola->nome}}</option>
                             @endforeach
                     </select>
                     <label for="escola_id">Escola</label>
@@ -45,7 +43,7 @@
             <div class="row">
 
                 <div class="input-field col s12">
-                    <textarea name="descricao" id="descricao" class="materialize-textarea"></textarea>
+                    <textarea name="descricao" id="descricao" class="materialize-textarea">{{old('descricao', $horta->descricao?? '')}}</textarea>
                     <label for="descricao">Descrição</label>
                 </div>
 
