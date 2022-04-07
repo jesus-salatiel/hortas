@@ -35,10 +35,10 @@
 
         @foreach ( $horta->fotos as $foto )
 
-            <div class="card" style="display: flex; flex-wrap: wrap; justify-content: space-around; width: 299px; height: 200px; min-width:150px">
+            <div class="card" style="display: flex; flex-wrap: wrap; justify-content: space-around;  min-width:150px">
 
-                <div class="card-image waves-block waves-light ">
-                    <img class="materialboxed" src="{{ asset("storage/{$foto->url}") }}">
+                <div class="card-image waves-block waves-light" >
+                    <img class="materialboxed" style="width: 320px; height: " src="{{ asset("storage/{$foto->url}") }}">
                 </div>
             </div>
         @endforeach
