@@ -61,7 +61,7 @@
 
                                             <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                         this.closest('form').submit(); " role="button">
-                                               
+
                                                 {{ __('Sair') }}
                                             </a>
 
@@ -135,6 +135,11 @@
         const instancesSidenav = M.Sidenav.init(elemsSidenav, {
             edge: "left"
         });
+
+        // //MODAL
+        // var elems = document.querySelectorAll('.modal');
+        // var instances = M.Modal.init(elems, options);
+        // });
 
 
         // $(document).ready(function(){
