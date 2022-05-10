@@ -28,14 +28,18 @@
             <h5>Escola</h5>
             <p>{{$horta->nome_horta}}</p>
         </span>
-    {{-- </div>
-    <div class="row"> --}}
-        <div class="col s7 m12">
-          <div class="card-panel">
-            <span class="black-text">{{ $horta->descricao }}</span>
-          </div>
-        </div>
-      </div>
+
+    {{-- <div class="row"> --}}
+        {{-- <div class="col s7 m12"> --}}
+          {{-- <div class="card-panel"> --}}
+        <span class="col s12">
+            <h5>Mais Informações</h5>
+            <p>{{ $horta->descricao }}</p>
+        </span>
+          {{-- </div> --}}
+        {{-- </div> --}}
+        {{-- </div> --}}
+    </div>
 
     <div class="card caixa-horta" style="width: 100%; height: 100%;">
 

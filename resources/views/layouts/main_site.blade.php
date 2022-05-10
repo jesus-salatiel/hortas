@@ -27,7 +27,7 @@
         <div class="container">
             <div class="nav-wrapper ">
                 <!-- Voltar pagina anterior -->
-                <a  href="{{ url()->previous() }}" class="waves-effect #1565c0 blue darken-2 btn">
+                <a  href="{{ url()->previous() }}">
                     <span>Voltar</span>
                 </a>
 
@@ -54,13 +54,13 @@
 
                 <ul class="right">
                     <li>
-                        <a href="{{route('info')}}" class="waves-effect #1565c0 blue darken-2  btn">Hortaliças</a>
+                        <a href="{{route('info')}}" >Hortaliças</a>
                     </li>
                     <li class="relative flex items-top justify-center  sm:items-center py-4 sm:pt-0">
                         @if (Route::has('login'))
                             {{-- < class="hidden fixed top-0 right-0 px-6 py-4 sm:block"> --}}
                                 @auth
-                                    <a href="{{ route('admin.hortas.index') }}" class="text-sm  waves-effect #1565c0 blue darken-2  btn underline">Administrativo</a>
+                                    <a href="{{ route('admin.hortas.index') }}" class="text-sm underline">Administrativo</a>
                                     <li>
                                     @if (auth()->id())
                                     <form method="POST" action="{{ route('logout') }}">
@@ -75,7 +75,7 @@
                                     </form>
                                 @else
                                     <li class="nav-item">
-                                        <a class="nav-link waves-effect #1565c0 blue darken-2  btn " href="{{ route('login') }}"  role="button">
+                                        <a class="nav-link" href="{{ route('login') }}"  role="button">
                                             <i class="fas fa-sign-in-alt"></i>
                                             Login
                                         </a>
@@ -83,7 +83,7 @@
                                 @endif
                                     </li>
                                 @else
-                                    <a href="{{ route('login') }}" class="text-sm  underline waves-effect #1565c0 blue darken-2  btn">Entrar</a>
+                                    <a href="{{ route('login') }}" class="text-sm  underline">Entrar</a>
 
                                     {{-- @if (Route::has('register'))
                                         <a href="{{ route('register') }}" class="ml-4 text-sm  underline">Register</a>
