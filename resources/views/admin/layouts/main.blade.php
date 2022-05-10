@@ -20,23 +20,25 @@
 <body>
 
     {{--Menu Topo--}}
-    <nav style="background-color: #2196F3">
+    <nav style="background-color: #0d6efd">
         <div class="container">
             <div class="nav-wrapper ">
-                <a href="#" class="brand-logo"> HORTA EDUCATIVA </a>
+                <a class="waves-effect #1565c0 blue darken-2  btn" href="{{ url()->previous() }}">Voltar
+                </a>
+                {{-- <a href="#" class="brand-logo"> HORTA EDUCATIVA </a> --}}
                 <ul class="right">
                     <li>
-                        <a href="{{route('admin.hortas.index')}}">Hortas</a>
+                        <a href="{{route('admin.hortas.index')}}" class="waves-effect #1565c0 blue darken-2  btn">Hortas</a>
                     </li>
                     <li>
-                        <a href="{{route('welcome')}}">Página Inicial</a>
+                        <a href="{{route('welcome')}}" class="waves-effect #1565c0 blue darken-2  btn">Página Inicial</a>
                     </li>
                     <li>
                     @if (auth()->id())
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
 
-                                <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                <a class="nav-link waves-effect #1565c0 blue darken-2  btn" href="{{ route('logout') }}" onclick="event.preventDefault();
                                             this.closest('form').submit(); " role="button">
 
                                     {{ __('Sair') }}
@@ -45,7 +47,7 @@
                         </form>
                     @else
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}" role="button">
+                            <a class="nav-link waves-effect #1565c0 blue darken-2  btn" href="{{ route('login') }}" role="button">
                                 <i class="fas fa-sign-in-alt"></i>
                                 Login
                             </a>

@@ -22,6 +22,18 @@ class HortaController extends Controller
         return view('site.escolas.hortas.index', compact('escola', 'hortas'));
     }
 
+    public function galeria($idEscola, $idHorta)
+    {
+        $escola = Escola::find($idEscola);
+
+        $hortas = Horta::with(['finalidade', 'fotos'])
+            ->where('escola_id', $idEscola)
+            ->paginate(env('PAGINACAO'));
+
+
+        return view('site.escolas', compact('escola', 'hortas'));
+
+    }
     public function show($idEscola, $idHorta)
     {
         $horta = Horta::find($idHorta);

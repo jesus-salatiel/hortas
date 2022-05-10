@@ -14,7 +14,11 @@ use Illuminate\Support\Facades\Auth;
 
 // Page Inicial - PUBLIC
 
-Route::redirect('/', '/galeria')->name('welcome');
+
+
+Route::get('/', function(){
+    return view('welcome');
+})->name('welcome');
 
 Route::resource('/galeria', GaleriaController::class);
 

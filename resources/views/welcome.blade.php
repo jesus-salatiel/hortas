@@ -23,52 +23,28 @@
 
 <section class="section">
 
-
-
-    <div class="card caixa-horta" style="width: 100%; height: 100%;">
-
-        @foreach ($hortas as $horta)
-
-            {{-- @php
-                if($horta->fotos->isEmpty()){
-                    $tmp = '';
-
-                } else {
-                    $tmp = $horta->fotos[0]->url;
-
-                } --}}
-            @endphp
-            {{-- @foreach ( $fotos as $foto ) --}}
-
-            {{-- @dd($horta->escolas->nome) --}}
-
-            <div class="card" style="width: 300px; height: 370px; min-width:150px">
-
-                <div class="card-image waves-effect waves-block waves-light ">
-                    <img src="storage/{{ $horta->fotos[0]->url }}">
+    <div class="caixa-horta" style="width: 100%; height: 100%;">
+        <div class="row">
+            <div class="col s12 m12">
+              <div class="card-panel">
+                {{-- <div class="card-image"> --}}
+                 <a href="{{ route('galeria.index') }}"><img src="image/Logo-projeto.png"></a>
                 </div>
                 <div class="card-content">
-                    <span class="card-title activator grey-text text-darken-4"><i
-                            class="material-icons right">more_vert</i></span>
-                    <span style="font-size:110%"><strong> INFORMAÇÕES</strong></span> <br><br>
-                    <div style="font-size:110%; font-weight: bold;"> Horta da Escola: </div>
-                    <div style="font-size:130%">{{ $horta->escola['nome'] }}</div>
-                    <div>
-                        <a href="{{ route('galeria.show', [$horta->id, $escola->id]) }}">Galeria de Fotos</a>
-                    </div>
+                  <p style="text-align: justify">O Projeto Horta Educativa, que tem como objetivo o cultivo de hortas e espaços verdes nas unidades escolares. A interação e a criação de vínculos com a natureza possibilitam o desenvolvimento das crianças em termos sociais, afetivos, cognitivos e motores. As hortas misturam pedagogia e consciência ambiental, cultivo, inclusão e consumo de alimentação saudável, tudo isso em um só espaço, incentivando as boas práticas na continuidade de seus cuidados. As hortas são espaços de aprendizado e podem ser utilizadas como ferramenta em diversas disciplinas. Incentivamos a formação de uma rede de apoio com a comunidade e famílias para realização do cuidado diário da horta.</p><br>
+                    <p> Coordenação: Setor de Projetos (Secretaria Municipal de Educação de Caraguatatuba)<br>
+                    Telefone de contato: (12) 3897-7009
+                    Supervisão: Maristela Ap. de Souza
+                    </p>
                 </div>
-
-                <div class="card-reveal">
-                    <span class="card-title grey-text text-darken-4">Informações<i
-                            class="material-icons right">close</i></span>
-                    <p style="text-align: justify">{{ $horta->descricao }}</p>
-                    <a href="http://"></a>
+                <div class="card-action">
+                  <a href="{{ route('galeria.index') }}">GALERIA DAS HORTAS</a>
                 </div>
+              </div>
             </div>
+          </div>
 
-            {{-- @endforeach --}}
-        @endforeach
-
+    </div>
 
 
 

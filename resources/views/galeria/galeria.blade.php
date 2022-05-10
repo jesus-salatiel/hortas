@@ -23,6 +23,7 @@
 
 <section class="section">
 
+    <h1>GALERIA</h1>
 
     <div class="card caixa-horta" style="width: 100%; height: 100%;">
 
