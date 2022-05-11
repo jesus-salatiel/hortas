@@ -24,7 +24,7 @@ p{
             <h3 style="text-align: center" class="header">AGRIÃO</h3>
             <div class="card horizontal">
                 <div class="card-image">
-                    <img src="{{ asset('image/agriao.jpg') }}">
+                    <img class="responsive-img" src="{{ asset('image/agriao.jpg') }}">
                 </div>
                 <div class="card-stacked">
                     <div class="card-content">
@@ -44,7 +44,7 @@ p{
             <h3 style="text-align: center" class="header">ALECRIM</h3>
             <div class="card horizontal">
                 <div class="card-image">
-                    <img src="{{ asset('image/alecrim.jpg') }}">
+                    <img class="responsive-img"  src="{{ asset('image/alecrim.jpg') }}">
                 </div>
                 <div class="card-stacked">
                     <div class="card-content">

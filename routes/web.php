@@ -4,7 +4,9 @@ use App\Http\Controllers\Admin\EscolaController;
 use App\Http\Controllers\Admin\FotoController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\HortaController;
+use App\Http\Controllers\DownloadController;
 use App\Http\Controllers\GaleriaController;
+use App\Models\Download;
 use App\Models\Escola;
 use App\Models\Foto;
 use App\Models\Galeria;
@@ -25,6 +27,9 @@ Route::resource('/galeria', GaleriaController::class);
 Route::get('/info', function(){
 return view('info');
 })->name('info');
+
+Route::resource('/downloads', DownloadController::class);
+
 
 
 

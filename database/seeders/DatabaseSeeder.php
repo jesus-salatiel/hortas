@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Download;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -16,6 +17,7 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             EscolaSeeder::class,
+            DownloadSeeder::class,
 
         ]);
     }

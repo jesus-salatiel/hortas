@@ -12,6 +12,7 @@
     {{-- TAILWIND
     <link rel="stylesheet" href="css/tailwind.css">
     <script src="https://cdn.tailwindcss.com"></script> --}}
+    
     {{--CSS Galeria Fotos--}}
     <link rel="stylesheet" href="{{asset('css/fotos.css')}}">
     <link rel="stylesheet" href="{{asset('css/sidebar.css')}}">
