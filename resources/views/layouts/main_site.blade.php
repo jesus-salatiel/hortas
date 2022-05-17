@@ -12,7 +12,7 @@
     {{-- TAILWIND
     <link rel="stylesheet" href="css/tailwind.css">
     <script src="https://cdn.tailwindcss.com"></script> --}}
-    
+
     {{--CSS Galeria Fotos--}}
     <link rel="stylesheet" href="{{asset('css/fotos.css')}}">
     <link rel="stylesheet" href="{{asset('css/sidebar.css')}}">
@@ -56,6 +56,9 @@
                 <ul class="right">
                     <li>
                         <a href="{{route('info')}}" >Hortaliças</a>
+                    </li>
+                    <li>
+                        <a href="{{route('downloads.index')}}" >Downloads</a>
                     </li>
                     <li class="relative flex items-top justify-center  sm:items-center py-4 sm:pt-0">
                         @if (Route::has('login'))

@@ -29,7 +29,7 @@
 
         @foreach ($downloads as $download)
 
-            <div class="card" style="width: 300px; height: 370px; min-width:150px">
+            <div class="card" style="width: 210px; height: 310px; min-width:110px">
 
                 <div class="card-image waves-effect waves-block waves-light ">
                     <img src="{{ $download->foto}}">
@@ -37,15 +37,16 @@
                 <div class="card-content">
                     <span class="card-title activator grey-text text-darken-4"><i
                             class="material-icons right">more_vert</i></span>
-                    <span style="font-size:110%"><strong>{{ $download->name }}</strong></span> <br><br>
-                    <div style="font-size:110%; font-weight: bold;"> download da Escola: </div>
-                    <p style="font-size:130%">{{ $download->descricao }}</p>
-
+                    <span style="font-size:110%"><strong>Conteúdo</strong></span> <br>
+                    <p class="truncate">{{ $download->descricao }}</p>
+                    <a href="{{ $download->url }}">DOWNLOAD</a>
                 </div>
 
                 <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4">Informações<i
+                        class="material-icons right">close</i></span>
                     <p style="text-align: justify">{{ $download->descricao }}</p>
-                    <a href="http://">{{ $download->url }}</a>
+
                 </div>
             </div>
 
