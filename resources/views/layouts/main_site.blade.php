@@ -55,10 +55,13 @@
 
                 <ul class="right">
                     <li>
+                        <a href="{{route('galeria.index')}}" >Hortas Escolares</a>
+                    </li>
+                    <li>
                         <a href="{{route('info')}}" >Hortaliças</a>
                     </li>
                     <li>
-                        <a href="{{route('downloads.index')}}" >Downloads</a>
+                        {{-- <a href="{{route('downloads.index')}}" >Downloads</a> --}}
                     </li>
                     <li class="relative flex items-top justify-center  sm:items-center py-4 sm:pt-0">
                         @if (Route::has('login'))

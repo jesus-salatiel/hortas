@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\HortaController;
 use App\Http\Controllers\DownloadController;
 use App\Http\Controllers\GaleriaController;
+use App\Http\Controllers\WelcomeController;
 use App\Models\Download;
 use App\Models\Escola;
 use App\Models\Foto;
@@ -16,11 +17,11 @@ use Illuminate\Support\Facades\Auth;
 
 // Page Inicial - PUBLIC
 
+Route::resource('/', WelcomeController::class);
 
-
-Route::get('/', function(){
-    return view('welcome');
-})->name('welcome');
+// Route::get('/', function(){
+//     return view('welcome');
+// })->name('welcome');
 
 Route::resource('/galeria', GaleriaController::class);
 
