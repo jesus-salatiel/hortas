@@ -31,7 +31,7 @@
                         <a href="{{route('admin.hortas.index')}}" >Hortas</a>
                     </li>
                     <li>
-                        <a href="{{route('welcome')}}" >Página Inicial</a>
+                        <a href="{{route('galeria.index')}}" >Página Inicial</a>
                     </li>
                     <li>
                     @if (auth()->id())
