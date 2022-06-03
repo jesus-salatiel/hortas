@@ -28,6 +28,9 @@
                 {{-- <a href="#" class="brand-logo"> HORTA EDUCATIVA </a> --}}
                 <ul class="right">
                     <li>
+                        <a href="{{route('admin.welcomes.index')}}" >Descriação Inicial</a>
+                    </li>
+                    <li>
                         <a href="{{route('admin.hortas.index')}}" >Hortas</a>
                     </li>
                     <li>
