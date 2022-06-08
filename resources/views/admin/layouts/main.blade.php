@@ -34,6 +34,9 @@
                         <a href="{{route('admin.hortas.index')}}" >Hortas</a>
                     </li>
                     <li>
+                        <a href="{{route('admin.downloads.index')}}" >Apostilas</a>
+                    </li>
+                    <li>
                         <a href="{{route('galeria.index')}}" >Página Inicial</a>
                     </li>
                     <li>
@@ -78,6 +81,8 @@
 
 <!-- Compiled and minified JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+{{-- compiled js materialize --}}
+{{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.js"></script> --}}
 
 {{--mensagem de inserção com sucesso--}}
 
@@ -91,6 +96,13 @@
         var elems = document.querySelectorAll('select');
         var instances = M.FormSelect.init(elems);
         });
+
+        document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.modal');
+        M.Modal.init(elems);
+        });
+
+
 
         // $(document).ready(function(){
         // $('select').formSelect();

@@ -23,23 +23,23 @@
 
 <section class="section">
 
-    <h1>DOWNLOADS</h1>
+    <h1 style="text-align: center" >Apostilas</h1>
 
     <div class="card caixa-horta" style="width: 100%; height: 100%;">
 
         @foreach ($downloads as $download)
 
-            <div class="card" style="width: 210px; height: 310px; min-width:110px">
+            <div class="card" style="width: 210px; height: 111px; min-width:110px">
 
-                <div class="card-image waves-effect waves-block waves-light ">
+                {{-- <div class="card-image waves-effect waves-block waves-light ">
                     <img src="{{ $download->foto}}">
-                </div>
-                <div class="card-content">
+                </div> --}}
+                <div class="card-content" style="padding-top: 1px; padding-bottom: 1px ">
                     <span class="card-title activator grey-text text-darken-4"><i
                             class="material-icons right">more_vert</i></span>
-                    <span style="font-size:110%"><strong>Conteúdo</strong></span> <br>
+                    <span style="font-size:110%"><strong>{{$download->name}}</strong></span> <br>
                     <p class="truncate">{{ $download->descricao }}</p>
-                    <a href="{{ $download->url }}">DOWNLOAD</a>
+                    <span><a href="{{ $download->url }}" target="_blank">DOWNLOAD</a></span>
                 </div>
 
                 <div class="card-reveal">

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\DownloadController as AdminDownloadController;
 use App\Http\Controllers\Admin\EscolaController;
 use App\Http\Controllers\Admin\FotoController;
 use Illuminate\Support\Facades\Route;
@@ -42,6 +43,7 @@ Route::prefix('admin')->name('admin.')->group(function(){
 
     Route::resource('escolas', EscolaController::class)->except(['show']);
     Route::resource('hortas', HortaController::class);
+    Route::resource('downloads', AdminDownloadController::class);
     Route::resource('welcomes', AdminWelcomeController::class);
     Route::resource('hortas.fotos', FotoController::class)->except(['show', 'edit', 'update']);
 

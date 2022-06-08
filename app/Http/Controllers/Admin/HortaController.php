@@ -83,7 +83,7 @@ class HortaController extends Controller
     {
         //
         $horta = Horta::with(['escola'])->find($id);
-
+       
         return view('admin.hortas.show', compact('horta'));
     }
 

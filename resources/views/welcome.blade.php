@@ -19,9 +19,6 @@
 
 @section('content')
 
-{{-- <h4><strong>{{ $horta->nome_horta }}</strong></h4> --}}
-{{-- @dd($welcomes) --}}
-
 <section class="section">
 
     <div class="card-panel" style="width: 100%; height: 100%;">
@@ -35,8 +32,6 @@
                     @foreach ($welcomes as $welcome )
 
                             <p style="text-align: justify">{{ $welcome->description }}</p>
-
-                           
 
                     @endforeach
                 </div>
